@@ -15,6 +15,10 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        // EasyShift custom variants
+        hero: "bg-gradient-hero text-primary-foreground shadow-hero hover:shadow-soft transform hover:scale-105 transition-all duration-300 font-semibold",
+        feature: "bg-sage text-primary-foreground hover:bg-sage-light shadow-soft transition-smooth",
+        soft: "bg-cream text-sage border border-sage-lighter hover:bg-sage-lighter hover:text-sage transition-smooth",
       },
       size: {
         default: "h-10 px-4 py-2",

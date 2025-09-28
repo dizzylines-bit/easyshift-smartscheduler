@@ -57,6 +57,31 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // EasyShift brand colors
+        sage: {
+          DEFAULT: "hsl(var(--sage))",
+          light: "hsl(var(--sage-light))",
+          lighter: "hsl(var(--sage-lighter))",
+        },
+        cream: "hsl(var(--cream))",
+        "soft-blue": {
+          DEFAULT: "hsl(var(--soft-blue))",
+          light: "hsl(var(--soft-blue-light))",
+        },
+      },
+      backgroundImage: {
+        "gradient-hero": "var(--gradient-hero)",
+        "gradient-feature": "var(--gradient-feature)",
+        "gradient-card": "var(--gradient-card)",
+      },
+      boxShadow: {
+        soft: "var(--shadow-soft)",
+        feature: "var(--shadow-feature)",
+        hero: "var(--shadow-hero)",
+      },
+      transitionTimingFunction: {
+        smooth: "var(--transition-smooth)",
+        bounce: "var(--transition-bounce)",
       },
       borderRadius: {
         lg: "var(--radius)",
