@@ -4,6 +4,7 @@ import Features from "@/components/Features";
 import AdvantagesShowcase from "@/components/AdvantagesShowcase";
 import Testimonials from "@/components/Testimonials";
 import PricingSection from "@/components/PricingSection";
+import ScheduleDemo from "@/components/ScheduleDemo";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -11,10 +12,17 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Header />
       <Hero />
-      <Features />
-      <AdvantagesShowcase />
+      <div id="features">
+        <Features />
+      </div>
+      <div id="advantages">
+        <AdvantagesShowcase />
+      </div>
       <Testimonials />
-      <PricingSection />
+      <div id="pricing">
+        <PricingSection />
+      </div>
+      <ScheduleDemo />
       <Footer />
     </div>
   );

@@ -2,6 +2,20 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
+const scrollToSection = (sectionId: string) => {
+  const element = document.getElementById(sectionId);
+  if (element) {
+    const headerOffset = 80; // Account for fixed header
+    const elementPosition = element.offsetTop;
+    const offsetPosition = elementPosition - headerOffset;
+    
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
+  }
+};
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -19,15 +33,30 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#features" className="text-muted-foreground hover:text-foreground transition-colors">
+            <button 
+              onClick={() => scrollToSection('features')} 
+              className="text-muted-foreground hover:text-foreground transition-colors"
+            >
               Features
-            </a>
-            <a href="#pricing" className="text-muted-foreground hover:text-foreground transition-colors">
+            </button>
+            <button 
+              onClick={() => scrollToSection('advantages')} 
+              className="text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Why EasyShift
+            </button>
+            <button 
+              onClick={() => scrollToSection('pricing')} 
+              className="text-muted-foreground hover:text-foreground transition-colors"
+            >
               Pricing
-            </a>
-            <a href="#support" className="text-muted-foreground hover:text-foreground transition-colors">
-              Support
-            </a>
+            </button>
+            <button 
+              onClick={() => scrollToSection('demo')} 
+              className="text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Schedule Demo
+            </button>
           </nav>
 
           {/* Desktop CTA */}
@@ -57,27 +86,42 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden border-t border-border mt-4 pt-4 pb-6">
             <nav className="space-y-4">
-              <a 
-                href="#features" 
-                className="block text-muted-foreground hover:text-foreground transition-colors"
-                onClick={() => setIsMenuOpen(false)}
+              <button 
+                onClick={() => {
+                  scrollToSection('features');
+                  setIsMenuOpen(false);
+                }}
+                className="block w-full text-left text-muted-foreground hover:text-foreground transition-colors"
               >
                 Features
-              </a>
-              <a 
-                href="#pricing" 
-                className="block text-muted-foreground hover:text-foreground transition-colors"
-                onClick={() => setIsMenuOpen(false)}
+              </button>
+              <button 
+                onClick={() => {
+                  scrollToSection('advantages');
+                  setIsMenuOpen(false);
+                }}
+                className="block w-full text-left text-muted-foreground hover:text-foreground transition-colors"
+              >
+                Why EasyShift
+              </button>
+              <button 
+                onClick={() => {
+                  scrollToSection('pricing');
+                  setIsMenuOpen(false);
+                }}
+                className="block w-full text-left text-muted-foreground hover:text-foreground transition-colors"
               >
                 Pricing
-              </a>
-              <a 
-                href="#support" 
-                className="block text-muted-foreground hover:text-foreground transition-colors"
-                onClick={() => setIsMenuOpen(false)}
+              </button>
+              <button 
+                onClick={() => {
+                  scrollToSection('demo');
+                  setIsMenuOpen(false);
+                }}
+                className="block w-full text-left text-muted-foreground hover:text-foreground transition-colors"
               >
-                Support
-              </a>
+                Schedule Demo
+              </button>
               <div className="pt-4 space-y-3">
                 <button className="block w-full text-left text-muted-foreground hover:text-foreground transition-colors">
                   Sign In
